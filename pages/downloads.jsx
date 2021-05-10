@@ -7,9 +7,9 @@ export default function DownloadsPage() {
       <InnerPage>
 
         <TextContainer>
-          <h1>Contact us</h1>
+          <h1>Downloads</h1>
           <ul>
-              <li>International Sales Office </li>
+              <li><a href="/api/download-pdf">iRTU2020 Datasheet </a></li>
               <li>iRTUIO Manual </li>
               <li>iRTU2020 Kernel installation and Update Manual </li>
               <li>pbsSoftLogic IDE , pbsSoftLogic Manual </li>
@@ -49,16 +49,26 @@ const MainPage = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  & a {
+    text-decoration: underline !important;
+  }
 `
 
 const InnerPage = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   width: 90%;
-  margin-top: 5vh;
+  margin-top: 3vh;
   background-color: white;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
+
+  align-items: center;
+  
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const TextContainer = styled.div`
@@ -69,7 +79,7 @@ const TextContainer = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
+  padding-top: 40px;
 
   & > h1 {
     font-size: 25px;
@@ -79,5 +89,19 @@ const TextContainer = styled.div`
     font-size: 21px;
     line-height: 2;
     padding: 5px 0;
+  }
+
+  @media (max-width: 850px) {
+    max-width: 100% !important;
+    padding: 5px;
+
+    & > h1 {
+      font-size: 20px;
+    }
+
+    & > p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
   }
 `

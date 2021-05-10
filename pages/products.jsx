@@ -10,7 +10,7 @@ export default function ProductsPage() {
         <TextContainer>
           <h1>Products</h1>
           <ul>
-              <li>iRTU2020 Intelligent RTU </li>
+              <li><a href="/api/download-pdf" target="_blank">iRTU2020</a> Intelligent RTU </li>
               <li>iRTUIO-16DI CAN/RS485 16 channel DI Remote IO Module </li>
               <li>iRTUIO-16DO CAN/RS485 16 channel DO Remote IO Module </li>
               <li>iRTUIO-8AI CAN/RS485 8 channel AI Remote IO Module </li>
@@ -36,16 +36,26 @@ const MainPage = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  & a {
+    text-decoration: underline !important;
+  }
 `
 
 const InnerPage = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   width: 90%;
   margin-top: 5vh;
   background-color: white;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 15px;
+  align-items: center;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ImageHolder = styled.div`
@@ -54,6 +64,11 @@ const ImageHolder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 850px) {
+    width: 100%;
+    margin: 20px 4px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -72,5 +87,19 @@ const TextContainer = styled.div`
     font-size: 21px;
     line-height: 2;
     padding: 15px 0;
+  }
+
+  @media (max-width: 850px) {
+    max-width: 100% !important;
+    padding: 5px;
+
+    & > h1 {
+      font-size: 20px;
+    }
+
+    & > p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
   }
 `

@@ -7,7 +7,7 @@ export default function HomePage() {
     <MainPage>
       <InnerPage>
 
-        <TextContainer>
+        <TextContainer className="text-container">
           <h1>About us</h1>
           <p>
             iRTUAutomation Supply full SCADA Solutions for Power , Water , Wastewater , Oil and Gas Industries.
@@ -22,7 +22,7 @@ export default function HomePage() {
           </p>
         </TextContainer>
 
-        <ImageHolder>
+        <ImageHolder className="image-container">
           <Image src="/images/hero.jpg" width={650} height={500} alt="hero of page" />
         </ImageHolder>
       </InnerPage>
@@ -66,13 +66,19 @@ const MainPage = styled.div`
 `
 
 const InnerPage = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   width: 90%;
   margin-top: 5vh;
   background-color: white;
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ImageHolder = styled.div`
@@ -81,6 +87,12 @@ const ImageHolder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+
+  @media (max-width: 850px) {
+    width: 100%;
+    margin: 20px 4px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -99,6 +111,20 @@ const TextContainer = styled.div`
     font-size: 21px;
     line-height: 2;
   }
+
+  @media (max-width: 850px) {
+    max-width: 100% !important;
+    padding: 5px;
+
+    & > h1 {
+      font-size: 20px;
+    }
+
+    & > p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  }
 `
 
 const ProductsHolder = styled.div`
@@ -113,6 +139,7 @@ const ProductsHolder = styled.div`
 `
 
 const Product = styled.div`
+  min-width: 200px;
   width: 25%;
   display: flex;
   flex-direction: column;
@@ -134,6 +161,11 @@ const Product = styled.div`
   & img {
     border-radius: 50%;
   }
-
+  @media (max-width: 850px) {
+    & > p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+  }
 `
 

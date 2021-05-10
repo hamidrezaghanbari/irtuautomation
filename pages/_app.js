@@ -65,6 +65,11 @@ const Footer = styled.div`
      color: white;
      font-size: 20px;
    }
+   @media (max-width: 850px) {
+      & > p {
+        font-size: 16.5px;
+      }
+    }
 `
 
 export default App

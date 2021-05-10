@@ -40,13 +40,20 @@ const MainPage = styled.div`
 `
 
 const InnerPage = styled.div`
-  height: 80vh;
+  min-height: 80vh;
   width: 90%;
   margin-top: 5vh;
   background-color: white;
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
+
+  align-items: center;
+  
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
 `
 
 const ImageHolder = styled.div`
@@ -56,6 +63,11 @@ const ImageHolder = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 15%;
+
+  @media (max-width: 850px) {
+    width: 100%;
+    margin: 20px 4px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -75,5 +87,19 @@ const TextContainer = styled.div`
     font-size: 21px;
     line-height: 2;
     padding: 15px 0;
+  }
+
+  @media (max-width: 850px) {
+    max-width: 100% !important;
+    padding: 5px;
+
+    & > h1 {
+      font-size: 20px;
+    }
+
+    & > p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
   }
 `
